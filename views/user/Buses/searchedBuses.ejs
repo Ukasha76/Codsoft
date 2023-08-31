@@ -1,0 +1,27 @@
+<% layout('layouts/boilerplate')%>
+
+    <link rel="stylesheet" href="/Admin/buses.css">
+
+    <h1>All Busses on Provided Date</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Time</th>
+                <th>Actions</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            <% for(b of Busses){ %>
+                
+                <tr>
+                    <td><%= b.from%></td>
+                    <td><%=b.to %></td>
+                    <td><%=b.time %></td>
+                    <td><a href="/user/bookseat/<%= b._id %>"><button>Book Seats</button></a></td>
+                    
+                </tr>
+                <% } %>
+        </tbody>

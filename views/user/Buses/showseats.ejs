@@ -1,0 +1,63 @@
+<% layout('layouts/boilerplate') %>
+  <link rel="stylesheet" href="/user/busses/seats.css">
+  
+  <div class="seat-layout">
+
+    <img src="/pic/engine.png" alt="" class="image">
+
+    <% for(let i=0; i<10; i++){ %>
+      <div class="row">
+
+        <% for(let j=0; j<4; j++){ %>
+
+          <% if(j===2){ %>
+            <div class="gap">
+
+            </div>
+            <% } %>
+            <div class="seat">
+                <% if(!seats[(i*4)+j].isReserved) {%>
+                <form action="/user/bookseat/<%= seats[(i*4)+j]._id %> " method="post">
+                  <button class="btn btn-success" id="openPopupBtn">
+                    <img src="/pic/car.png" alt="">
+                  </button>
+                </form>
+                <% }else{ %>
+                  <button class="btn btn-danger"  style="pointer-events: none;">
+                    <img src="/pic/car.png" alt="">
+                  </button>
+                  <% } %>
+            </div>
+        <% } %>
+      </div>
+      <% } %>
+
+        <div class="row">
+          <% for(let i=0; i<5; i++){ %>
+            <div class="seat">
+              <% if(!seats[40+i].isReserved) {%>
+              <form action="/user/bookseat/<%= seats[40+i]._id %> " method="post">
+                <button class="btn btn-success" id="openPopupBtn">
+                  <img src="/pic/car.png" alt="">
+                </button>
+              </form>
+              <% }else{ %>
+                <button class="btn btn-danger"  style="pointer-events: none;">
+                  <img src="/pic/car.png" alt="">
+                </button>
+                <% } %>
+            </div>
+            <% } %>
+        </div>
+  </div>
+
+  <div class="row">
+    <div class="button-container available">
+      Available
+    </div>
+    <div class="button-container booked">
+      Booked
+    </div>
+  </div>
+</div>
+

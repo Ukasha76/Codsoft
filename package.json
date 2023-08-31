@@ -1,0 +1,38 @@
+{
+  "name": "booking-app",
+  "version": "1.0.0",
+  "description": "1. [Project Overview](#project-overview)\r 2. [Getting Started](#getting-started)\r 3. [API Endpoints](#api-endpoints)\r 4. [Authentication and Authorization](#authentication-and-authorization)\r 5. [Database Schema](#database-schema)\r 6. [User Registration and Login](#user-registration-and-login)\r 7. [Search and Booking Functionality](#search-and-booking-functionality)\r 8. [Error Handling and Validation](#error-handling-and-validation)\r 9. [Testing](#testing)\r 10. [Deployment](#deployment)\r 11. [Troubleshooting](#troubleshooting)\r 12. [Contributing](#contributing)\r 13. [References](#references)\r 14. [Changelog](#changelog)\r 15. [License](#license)\r 16. [Acknowledgments](#acknowledgments)\r 17. [Contact Information](#contact-information)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx env-cmd -f .env nodemon -e js,ejs index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^5.0.0",
+    "connect-mongodb-session": "^3.1.1",
+    "cookie-parser": "^1.4.6",
+    "dayjs": "^1.11.9",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^7.4.2",
+    "path": "^0.12.7",
+    "pdfkit": "^0.13.0",
+    "stripe": "^13.3.0",
+    "uuid": "^9.0.0",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^3.0.1"
+  }
+}

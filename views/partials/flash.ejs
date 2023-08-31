@@ -1,0 +1,20 @@
+<!-- at a time only one between two will run -->
+  <% if(flashmessages.error && flashmessages.error.length>0){ %>
+    <% flashmessages.error.forEach((message) => { %>
+      <div class="alert alert-danger alert-dismissible fade show">
+        <strong><%= message %></strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% }); %>
+    
+    <% } %>
+    <% if(!(flashmessages.error && flashmessages.error.length>0)){ %>
+    <% Object.keys(flashmessages).forEach((key) => { %>
+      <div class="alert alert-<%= key %> alert-dismissible fade show">
+       <strong> <%= flashmessages[key] %></strong>
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  
+      </div>
+    <% }); %>
+    <% } %>
+  

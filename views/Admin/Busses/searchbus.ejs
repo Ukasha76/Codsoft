@@ -1,0 +1,81 @@
+<% layout('layouts/adminboiler')%>
+
+<h1>Search Busses</h1>
+
+
+<div class="container">
+
+    <div class="content-container">
+        <div class="search-container col-md-8">
+            <h1 >Search Bus</h1>
+            <form action="/admin/searchBus" method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <select class="form-control" id="from" name="from" required>
+                            <option value="" selected>Departure Terminal</option>
+
+                            <%bus_from.forEach(function(bus) { %>
+                                <option value="<%=bus%>">
+                                    <%=bus %>
+                                </option>
+                                <% }) %>
+                        </select>
+
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-control" id="to" name="to" required>
+                            <option value="" selected>Arrival Terminal</option>
+                            <% bus_to.forEach(function(bus) { %>
+                                <option value="<%= bus %>">
+                                    <%= bus %>
+                                </option>
+                                <% }) %>
+                        </select>
+
+                    </div>
+                    <div class="col-md-4">
+                  
+                        <input type="date" name="date" id="date" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Find Bus</button>
+            </form>
+        </div>
+        <% if (Busses.length) { %>
+            <div class="result-container col-md-12">
+                <h1 class="text-center fs-3 font-weight-bold">Busses Found</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th >From</th>
+                            <th>To</th>
+                            <th>Time</th>
+                            <th>Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (b of Busses) { %>
+                            <tr>
+                                <td>
+                                    <%= b.from %>
+                                </td>
+                                <td>
+                                    <%= b.to %>
+                                </td>
+                                <td>
+                                    <%= b.time %>
+                                </td>
+                                <td>
+                                    <%= b.date %>
+                                </td>
+                                <td>  <a href="/admin/bus/<%= b._id %>"><button>Details</button></a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <% } %>
+    </div>
+</div>

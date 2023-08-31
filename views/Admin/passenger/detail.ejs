@@ -1,0 +1,53 @@
+<% layout('layouts/adminboiler')%>
+
+    <link rel="stylesheet" href="/Admin/buses.css">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Time</th>
+                <th>Date</th>
+                <th>Reserved At</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+
+            <tr>
+                <td>
+                    <%= user.username %>
+                </td>
+                <td>
+                    <%= user.email %>
+                </td>
+                <td>
+                    <%= user.phoneNumber %>
+                </td>
+                <td>
+                    <%= bus.from %>
+                </td>
+                <td>
+                    <%= bus.to %>
+                </td>
+                <td>
+                    <%= bus.date %>
+                </td>
+                <td>
+                    <%= bus.time %>
+                </td>
+                <td>
+                    <%=reservedAt.fulldate%> ,<%= reservedAt.time  %>
+                </td>
+
+
+            </tr>
+
+        </tbody>
+
+        <!-- <a href="/admin/bus/<%= bus._id %>"><button>Go Back</button></a> -->

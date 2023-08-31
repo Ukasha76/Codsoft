@@ -1,0 +1,66 @@
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the background color to yellow */
+/* body { */
+    /* background: url('/pic/pic1.jpg') center / cover no-repeat; */
+    /* background-color:rgb(255, 225, 225); */
+/* } */
+
+/* Your existing CSS rules */
+
+/* Center-align content within <main> */
+/* main.css */
+
+body {
+  background-color: black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;   
+    /* Allow content to fill available vertical space */
+    padding: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    /* margin-top: -250px; */
+    /* Add padding for better spacing */
+}
+.container{
+    opacity: 1;
+    max-width: 2000px;
+    /* width: 1000%; */
+    margin: 90px auto;
+    margin-bottom: 200PX;
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); */
+
+    border-radius: 50px;
+    background:whitesmoke
+}
+main p,
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+    max-width: 50%;
+}
+/* Make images and rrrrrrrrrrrrrrrrrrrrrrrrrrvideos responsive within <main> */
+/* main img,
+main video {
+    max-width: 100%;
+    height: auto;
+} */
+
+/* Responsive text *rrrrrrrrrrrrrrrrrrrrrrrr4/
+
+
+/* ... Your existing CSS rules ... */

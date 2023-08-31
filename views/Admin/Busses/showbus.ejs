@@ -1,0 +1,108 @@
+<% layout('layouts/adminboiler')%>
+
+    <link rel="stylesheet" href="/Admin/searchbusdirect.css">
+    <div class="container">
+        <div class="row">
+            <div class="result-container col-md-12">
+                <h1 class="text-center fs-3 font-weight-bold">Busses Found</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Departure</th>
+                            <th>Destination</th>
+                            <th>Departure Date</th>
+                            <th>Departure Time</th>
+                            <th>BusNumber</th>
+                            <th>Total Seats</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        <tr>
+                            <td>
+                                <%= bus.from %>
+                            </td>
+                            <td>
+                                <%= bus.to %>
+                            </td>
+                            <td>
+                                <%=bus.date%>
+                            </td>
+                            <td>
+                                <%= bus.time%>
+                            </td>
+                            <td>
+                                <%= bus.busNumber %>
+                            </td>
+                            <td>
+                                <%= bus.totalSeats%>
+                            </td>
+                            <td>
+                                <form action="/admin/dropBus/<%= bus._id %>?_method=DELETE" method="post"
+                                    style="display: inline;">
+                                    <button class="btn btn-danger">Drop Bus</button>
+                                </form>
+                                <form action="/admin/editBus/<%= bus._id %>" method="get" style="display: inline;">
+                                    <button class="btn btn-info">Edit Bus</button>
+                                </form>
+
+                            </td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h3 class="text-center">All Seats</h3>
+        <div class="col-md-8 seats-container">
+
+            <div class="table-responsive">
+                <table class="seats table">
+                    <thead>
+                        <tr>
+                            <th>Seat Number</th>
+                            <th>Status</th>
+                            <th>Passenger Details</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(s of seats){ %>
+
+                            <tr>
+                                <td>
+                                    <%= s.seatNumber%>
+                                </td>
+                                <td>
+                                    <% if(s.isReserved===true){ %>
+    
+                                        <%= s.isBooked===false?'Reserved':'Booked' %>
+    
+                                        <% } else{%>
+                                            Available
+                                    <%}  %>
+                                </td>
+                                <% if(s.user) {%>
+                                    <td>
+                                        <form action="/admin/passengerDetail/<%=s.user%>" method="get">
+                                            <button>Details</button>
+                                        </form>
+
+
+                                    </td>
+
+
+                                    <% } else{%>
+                                        <td></td>
+                                        <% } %>
+                            </tr>
+                            <% } %>
+                    </tbody>
+            </div>
+        </div>
+    </div>
+    </div>

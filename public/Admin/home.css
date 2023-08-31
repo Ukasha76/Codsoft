@@ -1,0 +1,41 @@
+.admin-panel-heading {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 30px;
+  }
+
+  .admin-panel-container {
+    margin-top: 50px;
+  }
+
+  .admin-panel-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .admin-panel-button:hover {
+    background-color: #449d44;
+    transform: scale(1.05);
+  }
+
+  .admin-panel-button-container {
+    padding: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  a:hover {
+    color: #333;
+  }

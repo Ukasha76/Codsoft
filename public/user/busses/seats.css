@@ -1,0 +1,89 @@
+
+.container {
+    display: flex;
+    flex-direction: column; /* Change flex-direction to column for smaller screens */
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-top: 100px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;
+  }
+
+  .seat {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+  }
+
+  .btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    color: white;
+  }
+
+  .image {
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: relative;
+   left: 180px;
+  }
+
+  .gap {
+    width: 40px;
+  }
+
+  .button-container {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    /* margin-top: 20px; */
+  }
+
+  .available {
+    background-color: rgb(26, 85, 26);
+    color: white;
+    /* margin-left: 15px; */
+  }
+
+  .booked {
+    background-color: rgb(242, 39, 39);
+    color: white;
+    margin-left: 10px;
+  }
+
+  /* Keyframes for animations */
+  @keyframes slideFromLeft {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }

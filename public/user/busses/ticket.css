@@ -1,0 +1,77 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 200vh;
+    overflow-y: scroll; /* Add scrollbars if content overflows */
+    background-color: #f2f2f2;
+  }
+  .card {
+    width: 100%;
+    max-width: 800px;
+    /* height: 1000vh; */
+    border: none;
+    max-height: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.5s ease-in-out both;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .card-header {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+  }
+
+  .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .button {
+    border: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Limit text to a single line */
+  .card-title,
+  .card-text {
+    white-space: nowrap;
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    font-weight: bolder;
+  }

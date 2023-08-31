@@ -1,0 +1,48 @@
+<% layout('layouts/adminboiler')%>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-10">
+                <form action="/admin/addBus" method="post" class="mt-4 p-4 border rounded shadow-sm">
+                    <div class="mb-3">
+                        <label for="from" class="form-label">From :</label>
+                        <input type="text" class="form-control" id="from" name="from" placeholder="From" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="to" class="form-label">To :</label>
+                        <input type="text" class="form-control" id="to" name="to" placeholder="to" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date :</label>
+                        <input type="date" class="form-control" id="date" name="date" placeholder="date" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="time" class="form-label">Time :</label>
+                        <input type="time" class="form-control" id="time" name="time" placeholder="time" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="busNumber" class="form-label">Bus Number :</label>
+                        <input type="text" class="form-control" id="busNumber" name="busNumber" placeholder="busnumber"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="seatPrice" class="form-label">Seat Price :</label>
+                        <input type="text" class="form-control" id="seatPrice" name="seatPrice" placeholder="seatPrice"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="totalSeats" class="form-label"> Total Seats:</label>
+                        <input type="text" class="form-control" id="totalSeats" name="totalSeats"
+                            placeholder="totalSeats" required>
+                    </div>
+
+
+                    <button class="btn btn-success " type="submit">Add Bus</button>
+
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>

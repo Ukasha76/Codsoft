@@ -1,0 +1,47 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/user/busses/ticket.css">
+<link rel="stylesheet" href="/user/busses/seats.css">
+
+  <div class="card mt-5">
+    <div class="card-header text-center">
+      Ticket Details
+    </div>
+    <div class="card-body">
+      <h5 class="card-title font-weight-bold">Seat Number: <%= ticket.seatNumber %></h5>
+      <h5 class="card-title font-weight-bold">Name: <%= ticket.user.username %></h5>
+      <h5 class="card-title font-weight-bold">Route: <%= ticket.bus.from %> to <%= ticket.bus.to %></h5>
+      <h5 class="card-text font-weight-bold">Departure: <%= ticket.bus.date %> at <%= ticket.bus.time %></h5>
+      <h5 class="card-title font-weight-bold">Status: <%= ticket.isReserved === true ? 'Reserved' : 'Booked' %></h5>
+      <h5 class="card-title text-muted">Reserved At: <%= date.fulldate%> ON <%= date.time%></h5>
+      <!-- <button class="button btn-primary"><%= ticket.isReserved === true ? 'Reserved' : 'Booked' %></button> -->
+    </div>
+    <div class="card-footer text-center">
+      Bus# <%= ticket.bus.busNumber %>
+    </div>
+    
+  </div>
+
+  <div class="row">
+
+    <div class="button-container">
+      <% if(Path!=='/bookTicket') {%>
+        <a href="/user/bookseat/<%= ticket.bus._id %>">Continue Booking</a>
+        <% } %>
+        <form action="/payment/<%= ticket.bus._id %>" method="POST">
+            <input type="hidden" name="amount" value="<%= amount %>">
+            <input type="hidden" name="username" value="<%= ticket.user.username %>">
+          
+            <input type="hidden" name="ticketId" value="<%= ticket._id%>">
+            <input type="hidden" name="Path" value="<%= Path%>">
+            <script
+                src="//checkout.stripe.com/v2/checkout.js"
+                class="stripe-button"
+                data-key="<%= key %>"
+                data-amount="<%= amount %>"
+                data-currency="pkr"
+                data-name="Seat"
+                data-description="Bus Seat Fare"
+                data-locale="auto">
+            </script>
+        </form>
+    

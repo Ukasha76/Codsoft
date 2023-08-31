@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Admin/buses.css">
+    <title>Bus details</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>BusNumber</th>
+                <th>Seat Price</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                   
+                    <td><%=bus.from %></td>
+                    <td><%= bus.to %></td>
+                    <td><%= bus.time %></td>
+                    <td><%= bus.date %></td>
+                    <td><%= bus.busNumber %></td>
+                    <td><%= bus.seatPrice %></td>
+                </tr>
+          
+        </tbody>
+    </table>
+ 
+</body>
+</html>

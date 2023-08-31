@@ -1,0 +1,26 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/user/busses/ticket.css">
+<% for (let i = 0; i < tickets.length; i++) { %>
+  <div class="card mt-5">
+    <div class="card-header text-center">
+      Ticket Details
+    </div>
+    <div class="card-body">
+      <h5 class="card-title font-weight-bold">Seat Number: <%= tickets[i].seatNumber %></h5>
+      <h5 class="card-title font-weight-bold">Name: <%= tickets[i].user.username %></h5>
+      <h5 class="card-title font-weight-bold">Route: <%= tickets[i].bus.from %> to <%= tickets[i].bus.to %></h5>
+      <h5 class="card-text font-weight-bold">Departure: <%= tickets[i].bus.date %> at <%= tickets[i].bus.time %></h5>
+      
+      <h5 class="card-title text-muted">Reserved At: <%= dates[i].fulldate%> ON <%= dates[i].time%></h5>
+      <h5 class="card-title text-muted">Seat Token: <%=tickets[i].seatToken%></h5>
+      <!-- <button class="button btn-primary"><%= tickets[i].isReserved === true ? 'Reserved' : 'Booked' %></button> -->
+    </div>
+    <div class="card-footer text-center">
+      Bus# <%= tickets[i].bus.busNumber %>
+
+    </div>
+    <div>
+      <a href="/user/downloadPDF/<%= tickets[i]._id %>"><button class="btn btn-success">Download Pdf</button></a>
+    </div>
+  </div>
+<% } %>

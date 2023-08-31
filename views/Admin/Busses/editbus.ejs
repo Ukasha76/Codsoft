@@ -1,0 +1,44 @@
+
+    <% layout('layouts/adminboiler')%>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-10">
+                <form action="/admin/editBus/<%= bus._id %>?_method=PATCH" method="post">
+                    <div class="mb-3">
+                        <label for="from" class="form-label">From :</label>
+                        <input type="text" class="form-control" id="from" name="from" placeholder="From" required value="<%= bus.from %>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="to" class="form-label">To :</label>
+                        <input type="text" class="form-control" id="to" name="to" placeholder="to" required value="<%= bus.to %>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date :</label>
+                        <input type="date" class="form-control" id="date" name="date" placeholder="date" required value="<%= bus.date %>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="time" class="form-label">Time :</label>
+                        <input type="time" class="form-control" id="time" name="time" placeholder="time" required value="<%= bus.time %>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="busNumber" class="form-label">Bus Number :</label>
+                        <input type="text" class="form-control" id="busNumber" name="busNumber" placeholder="busnumber"
+                            required value="<%= bus.busNumber %>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="seatPrice" class="form-label">Seat Price :</label>
+                        <input type="text" class="form-control" id="seatPrice" name="seatPrice" placeholder="seatPrice"
+                            required value="<%= bus.seatPrice %>">
+                    </div>
+        
+
+                    <button class="btn btn-success " >Save</button>
+
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>

@@ -1,0 +1,55 @@
+<% layout('layouts/adminboiler')%>
+    <link rel="stylesheet" href="/Admin/searchbusdirect.css">
+    <div class="container">
+        <div class="row">
+
+        <h3 class="text-center">All Seats</h3>
+        <div class="col-md-8 seats-container">
+
+            <div class="table-responsive">
+                <table class="seats table">
+                    <thead>
+                        <tr>
+                            <th>Seat Number</th>
+                            <th>Status</th>
+                            <th>Passenger Details</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(s of seats){ %>
+
+                            <tr>
+                                <td>
+                                    <%= s.seatNumber%>
+                                </td>
+                                <td>
+                                    <% if(s.isReserved===true){ %>
+    
+                                        <%= s.isBooked===false?'Reserved':'Booked' %>
+    
+                                        <% } else{%>
+                                            Available
+                                    <%}  %>
+                                </td>
+                                <% if(s.user) {%>
+                                    <td>
+                                        <form action="/admin/passengerDetail/<%=s.user%>" method="get">
+                                            <button>Details</button>
+                                        </form>
+
+
+                                    </td>
+
+
+                                    <% } else{%>
+                                        <td></td>
+                                        <% } %>
+                            </tr>
+                            <% } %>
+                    </tbody>
+
+            </div>
+        </div>
+    </div>
+    </div>

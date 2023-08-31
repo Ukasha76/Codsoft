@@ -1,0 +1,26 @@
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.statistics-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.statistics-list li {
+    margin-bottom: 10px;
+}
+
+.statistics-list strong {
+    display: inline-block;
+    width: 100px;
+}

@@ -1,0 +1,111 @@
+
+<% layout('layouts/adminboiler')%>
+
+<link rel="stylesheet" href="/Admin/stat.css">
+
+<script src="/Admin/buses.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-center">Search Bus to Drop</h1>
+            <form action="/admin/busstatistic" method="post">
+                <div class="row align-items-center mb-3">
+                    <div class="col-md-3">
+                        <select class="form-control" id="from" name="from" required>
+                            <option value="" selected>Departure Terminal</option>
+    
+                            <%bus_from.forEach(function(bus) { %>
+                                <option value="<%=bus%>">
+                                    <%=bus %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control" id="to" name="to" required>
+                            <option value="" selected>Arrival Terminal</option>
+                            <% bus_to.forEach(function(bus) { %>
+                                <option value="<%= bus %>">
+                                    <%= bus %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="time" class="form-control" id="time" name="time" placeholder="Time" required>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" class="form-control" id="date" name="date" placeholder="Date" required>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <% if (bus) { %>
+        <div class="result-container col-md-12">
+            <h1 class="text-center fs-3 font-weight-bold">Busses Found</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Time</th>
+                        <th>Date</th>
+                        <th>Bus Number</th>
+                        <th>Total Seats</th>
+                        <th>Seat Price</th>
+                        <th></th>
+                        <th>Total Revenue</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td>
+                            <%= bus.from %>
+                        </td>
+                        <td>
+                            <%= bus.to %>
+                        </td>
+                        <td>
+                            <%= bus.time %>
+                        </td>
+                        <td>
+                            <%= bus.date %>
+                        </td>
+                        <td>
+                            <%= bus.busNumber%>
+                        </td>
+                        <td>
+                            <%= bus.totalSeats %>
+                        </td>
+                        <td>
+                            <%= bus.seatPrice %>
+                        </td>
+                        <td>
+                            <ul class="list-unstyled statistics-list">
+                                <li><strong>Reserved</strong> <%= obj.reservedcount %></li>
+                                <li><strong>Booked </strong> <%= obj.bookedcount %></li>
+                                <li><strong>Available</strong> <%= obj.empty %></li>
+                            </ul>
+                        </td>
+                        <td class="font-weight-bold">
+                           
+                                 <%= obj.revenue %>  Rs
+                               
+                           
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <% } %>
+    </div>
+    </div>
